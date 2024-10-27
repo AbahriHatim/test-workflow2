@@ -52,7 +52,13 @@ jobs:
           SPRING_DATASOURCE_PASSWORD: password
           
         run: mvn -B package --file pom.xml
-
+      - name: Build and push docker image
+        uses: mr-smithers-excellent/docker-build-push@v4
+        with:
+          - image: abahrihatim/testrepoabahri
+          - registry: docker.io
+          - username: ${{secrets.DOCKER_USERNANE}}
+          - password: ${{secrets.DOCKER_PASSWORD}}
       # Optional: Update dependency graph
   test:
     runs-on: ubuntu-latest
