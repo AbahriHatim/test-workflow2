@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@DiscriminatorValue("VIP")
 public class ClientVIP extends Client{
     private String code;
     public ClientVIP(String id, String name, String code) {

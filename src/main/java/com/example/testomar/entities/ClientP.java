@@ -12,6 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@DiscriminatorValue("Pas")
 public class ClientP extends Client{
     private Date date;
     public ClientP(String id, String name, Date date) {

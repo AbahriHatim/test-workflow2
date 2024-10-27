@@ -20,7 +20,7 @@ public class TestOmarApplication {
     }
 
 
-    @Bean
+   // @Bean
     CommandLineRunner commandLineRunner(ClientServiceImpl clientService){
         return args -> {
             Stream.of("hatim","taha").forEach(name->{
