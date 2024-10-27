@@ -16,6 +16,8 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: Client
+          MYSQL_USER: user
+          MYSQL_PASSWORD: password
         ports:
           - 3306:3306
         options: >-
@@ -44,18 +46,11 @@ jobs:
 
       - name: Build with Maven
         env:
-          SPRING_APPLICATION_NAME: testOmar
-          SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/Client?createDatabaseIfNotExist=true
-          SPRING_DATASOURCE_USERNAME: root
-          SPRING_DATASOURCE_PASSWORD: ""
-          SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
-          SPRING_JPA_HIBERNATE_DDL_AUTO: update
-          SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQLDialect
-          LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY: DEBUG
-          LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_WEB: DEBUG
-          SERVER_PORT: 8082
-          SPRINGDOC_API_DOCS_PATH: /v3/api-docs
-          SPRINGDOC_SWAGGER_UI_PATH: /swagger-ui.html
+          
+          SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/Client
+          SPRING_DATASOURCE_USERNAME: user
+          SPRING_DATASOURCE_PASSWORD: password
+          
         run: mvn -B package --file pom.xml
 
       # Optional: Update dependency graph
