@@ -55,10 +55,11 @@ jobs:
       - name: Build and push docker image
         uses: mr-smithers-excellent/docker-build-push@v4
         with:
-          - image: abahrihatim/testrepoabahri
-          - registry: docker.io
-          - username: ${{secrets.DOCKER_USERNANE}}
-          - password: ${{secrets.DOCKER_PASSWORD}}
+          image: abahrihatim/testrepoabahri  # Corrected format
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}  # Fixed secret name
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
       # Optional: Update dependency graph
   test:
     runs-on: ubuntu-latest
