@@ -50,7 +50,7 @@ jobs:
           SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/Client
           SPRING_DATASOURCE_USERNAME: user
           SPRING_DATASOURCE_PASSWORD: password
-          
+        run: mvn -B package --file pom.xml
       - name: Login to Docker Hub
           uses: docker/login-action@v3
           with:
