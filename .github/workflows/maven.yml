@@ -38,4 +38,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: test-hatim
-        run: echo "hatim test"
+        run: echo "hatim test2"
